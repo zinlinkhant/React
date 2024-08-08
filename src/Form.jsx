@@ -1,17 +1,17 @@
 import { useRef } from "react";
 
-export default function Form({add}) {
-    const contentRef = useRef();
-    const nameRef = useRef();
+export function Form({ add }) {
+  const contentRef = useRef();
+  const nameRef = useRef();
   return (
     <form
-    onSubmit={e=>{
+      onSubmit={(e) => {
         e.preventDefault();
         const content = contentRef.current.value;
         const name = nameRef.current.value;
-        add(content,name)
+        add(content, name);
         e.currentTarget.reset();
-    }}
+      }}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -22,8 +22,18 @@ export default function Form({add}) {
         background: "#def",
       }}
     >
-      <input ref={contentRef} type="text" placeholder="Content" style={{ padding: 5 }} />
-      <input ref={nameRef} type="text" placeholder="Name" style={{ padding: 5 }} />
+      <input
+        ref={contentRef}
+        type="text"
+        placeholder="Content"
+        style={{ padding: 5 }}
+      />
+      <input
+        ref={nameRef}
+        type="text"
+        placeholder="Name"
+        style={{ padding: 5 }}
+      />
       <button
         type="submit"
         style={{
@@ -32,7 +42,9 @@ export default function Form({add}) {
           color: "white",
           border: "0 none",
         }}
-      >Post</button>
+      >
+        Post
+      </button>
     </form>
   );
 }

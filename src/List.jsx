@@ -1,15 +1,14 @@
-import React from 'react';
-
-export default function List({ children }) {
+export function List({ children }) {
   return (
     <ul
       style={{
-        listStyle: 'none',
+        listStyle: "none",
         padding: 0,
         margin: 0,
-        border: '1px solid #ddd',
+        border: "1px solid #ddd",
         borderRadius: 8,
-        overflow: 'hidden',
+        overflow: "hidden",
+        marginBottom:10
       }}
     >
       {children}
